@@ -63,15 +63,13 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-14">
             {/* Brand Logo - Left */}
-            {/* Brand Logo - Left */}
             <div className="flex items-center">
-              <a href="/" className="flex flex-col">
-                <span className="text-xl md:text-2xl font-bold text-foreground tracking-tight">
-                  AS PRINTERS
-                </span>
-                <span className="text-[10px] md:text-xs text-muted-foreground -mt-1">
-                  A unit of Chawla Label Company
-                </span>
+              <a href="/" className="flex items-center">
+                <img
+                  src="/logo.png"
+                  alt="AS PRINTERS Logo"
+                  className="h-10 w-auto object-contain"
+                />
               </a>
             </div>
 
