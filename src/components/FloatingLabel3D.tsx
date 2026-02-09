@@ -1,5 +1,5 @@
 import { useRef, Suspense } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { RoundedBox, Float, Environment } from "@react-three/drei";
 import * as THREE from "three";
 
@@ -201,6 +201,9 @@ function HangTag({
 }
 
 function Scene() {
+  const { viewport } = useThree();
+  const isMobile = viewport.width < 5;
+
   return (
     <>
       <ambientLight intensity={0.7} />
@@ -208,39 +211,51 @@ function Scene() {
       <directionalLight position={[-5, 3, 3]} intensity={0.5} />
       <pointLight position={[0, 5, 0]} intensity={0.3} color="#14b8a6" />
 
-      {/* Main labels - right side */}
+      {/* Main labels - adjusted for mobile */}
       <Label
-        position={[2.8, 0.8, 0.3]}
+        position={isMobile ? [0.5, 2.5, -2] : [2.8, 0.8, 0.3]}
         color="#f5e6d3"
-        scale={0.85}
+        scale={isMobile ? 0.6 : 0.85}
         floatIntensity={1.3}
         speed={1.1}
       />
       <Label
-        position={[3.2, -0.6, -0.3]}
+        position={isMobile ? [-0.8, -2, -1] : [3.2, -0.6, -0.3]}
         color="#d4e4ed"
-        scale={0.65}
+        scale={isMobile ? 0.5 : 0.65}
         speed={0.9}
       />
-      <WovenLabel position={[2.2, 0, 0.6]} scale={0.75} />
-      <StickerLabel position={[3.6, 0.3, 0.4]} scale={0.9} />
-      <HangTag position={[1.8, -0.8, 0.2]} scale={0.6} />
+      <WovenLabel
+        position={isMobile ? [1.2, -1.5, 0] : [2.2, 0, 0.6]}
+        scale={isMobile ? 0.5 : 0.75}
+      />
+      <StickerLabel
+        position={isMobile ? [-1, 2, -1] : [3.6, 0.3, 0.4]}
+        scale={isMobile ? 0.6 : 0.9}
+      />
+      <HangTag
+        position={isMobile ? [1, 1, -1] : [1.8, -0.8, 0.2]}
+        scale={isMobile ? 0.45 : 0.6}
+      />
 
       {/* Background labels - subtle */}
       <Label
-        position={[-2.5, 1.2, -1.2]}
+        position={isMobile ? [-1.5, 0, -3] : [-2.5, 1.2, -1.2]}
         color="#e8d5c4"
         scale={0.45}
         floatIntensity={0.6}
         speed={0.7}
       />
       <Label
-        position={[-2.2, -0.8, -0.8]}
+        position={isMobile ? [1.5, -0.5, -3] : [-2.2, -0.8, -0.8]}
         color="#c4d4e8"
         scale={0.35}
         speed={1.3}
       />
-      <HangTag position={[-2.8, 0.2, -0.5]} scale={0.4} />
+      <HangTag
+        position={isMobile ? [0, -2.8, -2] : [-2.8, 0.2, -0.5]}
+        scale={0.4}
+      />
 
       <Environment preset="city" />
     </>
