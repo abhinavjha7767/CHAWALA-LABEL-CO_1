@@ -180,27 +180,54 @@ export default function Navbar() {
               <div className="flex flex-col gap-4">
                 {navLinks.map((link) => (
                   <div key={link.href}>
-                    <a
-                      href={link.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="text-lg font-normal text-foreground hover:text-primary transition-colors py-2 block"
+                    <button
+                      onClick={() => {
+                        if (link.hasDropdown) {
+                          setActiveDropdown(
+                            activeDropdown === link.label ? null : link.label,
+                          );
+                        } else {
+                          setIsMobileMenuOpen(false);
+                          window.location.href = link.href;
+                        }
+                      }}
+                      className="w-full text-left text-lg font-normal text-foreground hover:text-primary transition-colors py-2 flex items-center justify-between"
                     >
                       {link.label}
-                    </a>
-                    {link.hasDropdown && link.dropdownItems && (
-                      <div className="ml-4 mt-2 space-y-2 border-l-2 border-primary/20 pl-4 py-1">
-                        {link.dropdownItems.map((item) => (
-                          <a
-                            key={item.label}
-                            href={item.href}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                            className="text-sm text-foreground/70 hover:text-primary transition-colors py-1 block"
+                      {link.hasDropdown && (
+                        <ChevronDown
+                          className={`w-4 h-4 transition-transform duration-200 ${
+                            activeDropdown === link.label ? "rotate-180" : ""
+                          }`}
+                        />
+                      )}
+                    </button>
+                    <AnimatePresence>
+                      {link.hasDropdown &&
+                        link.dropdownItems &&
+                        activeDropdown === link.label && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="overflow-hidden"
                           >
-                            {item.label}
-                          </a>
-                        ))}
-                      </div>
-                    )}
+                            <div className="ml-4 mt-2 space-y-2 border-l-2 border-primary/20 pl-4 py-1">
+                              {link.dropdownItems.map((item) => (
+                                <a
+                                  key={item.label}
+                                  href={item.href}
+                                  onClick={() => setIsMobileMenuOpen(false)}
+                                  className="text-sm text-foreground/70 hover:text-primary transition-colors py-1 block"
+                                >
+                                  {item.label}
+                                </a>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                    </AnimatePresence>
                   </div>
                 ))}
               </div>

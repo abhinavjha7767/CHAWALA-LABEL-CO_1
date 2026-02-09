@@ -26,7 +26,7 @@ const HeroSection = () => {
 
       {/* Navigation Placeholder (blends with hero) */}
 
-      <main className="relative z-10 container mx-auto px-6 pt-12 pb-24 md:pt-20 md:pb-32 flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+      <main className="relative z-10 container mx-auto px-6 pt-28 pb-24 md:pt-20 md:pb-32 flex flex-col md:flex-row items-center gap-12 lg:gap-20">
         {/* Left Content */}
         <div className="flex-1 text-center md:text-left space-y-8">
           {/* Badge */}

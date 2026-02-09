@@ -27,8 +27,8 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           {/* Brand */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
+          <div className="lg:col-span-2 text-center md:text-left">
+            <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
               <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
                 <Tag className="w-5 h-5 text-primary" />
               </div>
@@ -36,21 +36,21 @@ export default function Footer() {
                 AS PRINTERS
               </span>
             </div>
-            <p className="text-muted-foreground mb-6 max-w-sm">
+            <p className="text-muted-foreground mb-6 max-w-sm mx-auto md:mx-0">
               Premium branding solutions for the fashion industry. Elevate your
               brand with custom labels, tags, and stickers.
             </p>
             <div className="space-y-2">
               <a
                 href="tel:+919873705056"
-                className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                className="flex items-center justify-center md:justify-start gap-2 text-muted-foreground hover:text-primary transition-colors"
               >
                 <Phone className="w-4 h-4" />
                 +91 9873705056
               </a>
               <a
                 href="mailto:chawla@chawlalabel.com"
-                className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                className="flex items-center justify-center md:justify-start gap-2 text-muted-foreground hover:text-primary transition-colors"
               >
                 <Mail className="w-4 h-4" />
                 chawla@chawlalabel.com
@@ -59,7 +59,7 @@ export default function Footer() {
           </div>
 
           {/* Links */}
-          <div>
+          <div className="text-center md:text-left">
             <h4 className="font-display font-semibold mb-4 text-foreground">
               Products
             </h4>
@@ -77,7 +77,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="text-center md:text-left">
             <h4 className="font-display font-semibold mb-4 text-foreground">
               Company
             </h4>
@@ -95,7 +95,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="text-center md:text-left">
             <h4 className="font-display font-semibold mb-4 text-foreground">
               Support
             </h4>
