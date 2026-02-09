@@ -24,7 +24,7 @@ const contactInfo = [
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
+    <section id="contact" className="py-16 md:py-24 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 hero-gradient" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl" />
@@ -52,7 +52,7 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="glass-card p-8"
+            className="glass-card p-6 md:p-8"
           >
             <h3 className="font-display text-2xl font-semibold mb-6">
               Send us a message
@@ -108,7 +108,7 @@ export default function ContactSection() {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <div className="glass-card p-8">
+            <div className="glass-card p-6 md:p-8">
               <h3 className="font-display text-2xl font-semibold mb-6">
                 Contact Information
               </h3>
@@ -132,7 +132,7 @@ export default function ContactSection() {
             </div>
 
             {/* Business Hours */}
-            <div className="glass-card p-8">
+            <div className="glass-card p-6 md:p-8">
               <h3 className="font-display text-xl font-semibold mb-4">
                 Business Hours
               </h3>

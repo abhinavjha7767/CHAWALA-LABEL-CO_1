@@ -90,6 +90,21 @@ const packagings = [
     title: "Packaging Tape",
     image: "/Custom-Printed-Tape-10-300x201.jpg",
   },
+  {
+    id: 6,
+    title: "Woven Labels",
+    image: "/woven Labels.webp",
+  },
+  {
+    id: 6,
+    title: "Printed Labels",
+    image: "/printed labels.webp",
+  },
+  {
+    id: 6,
+    title: "Garment Tags",
+    image: "/garment tags.webp",
+  },
 ];
 
 export default function ProductsSection() {
@@ -116,7 +131,7 @@ export default function ProductsSection() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-8">
             {tagsAndLabels.map((item, index) => (
               <motion.div
                 key={item.id}
@@ -166,7 +181,7 @@ export default function ProductsSection() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-8 max-w-5xl mx-auto">
             {packagings.map((item, index) => (
               <motion.div
                 key={item.id}

@@ -8,14 +8,14 @@
 
 @layer base {
   :root {
-    /* Primary Brand Colors - Plum Purple Theme */
-    --background: 280 30% 98%;
+    /* Primary Brand Colors - Clean White Theme */
+    --background: 0 0% 100%;
     --foreground: 280 25% 10%;
 
-    --card: 280 30% 100%;
+    --card: 0 0% 100%;
     --card-foreground: 280 25% 10%;
 
-    --popover: 280 30% 100%;
+    --popover: 0 0% 100%;
     --popover-foreground: 280 25% 10%;
 
     /* Primary - Deep Plum Purple */
@@ -50,8 +50,8 @@
     );
     --gradient-hero: linear-gradient(
       180deg,
-      hsl(275 40% 94%) 0%,
-      hsl(280 30% 98%) 100%
+      hsl(0 0% 100%) 0%,
+      hsl(0 0% 98%) 100%
     );
     --gradient-card: linear-gradient(
       145deg,
@@ -71,7 +71,7 @@
     --glass-bg: hsl(280 30% 100% / 0.7);
     --glass-border: hsl(280 25% 88% / 0.5);
 
-    --sidebar-background: 280 20% 98%;
+    --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 280 5.3% 26.1%;
     --sidebar-primary: 280 60% 40%;
     --sidebar-primary-foreground: 0 0% 98%;

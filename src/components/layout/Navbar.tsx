@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const tagsDropdownItems = [
   { label: "Hang Tag", href: "#tags" },
@@ -52,7 +53,6 @@ const navLinks = [
     hasDropdown: true,
     dropdownItems: packagingsDropdownItems,
   },
-  { href: "#gallery", label: "Gallery", hasDropdown: true },
   { href: "#blog", label: "Blog" },
   { href: "#faqs", label: "FAQS" },
   { href: "#about", label: "About Us" },
@@ -87,12 +87,15 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-14">
             {/* Brand Logo - Left */}
+            {/* Brand Logo - Left */}
             <div className="flex items-center">
-              <a
-                href="/"
-                className="font-display text-xl md:text-2xl font-bold text-primary"
-              >
-                AS PRINTERS
+              <a href="/" className="flex flex-col">
+                <span className="text-xl md:text-2xl font-bold text-foreground tracking-tight">
+                  AS PRINTERS
+                </span>
+                <span className="text-[10px] md:text-xs text-muted-foreground -mt-1">
+                  A unit of Chawla Label Company
+                </span>
               </a>
             </div>
 
@@ -142,11 +145,14 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* Mobile Menu Toggle */}
-            <div className="flex lg:hidden items-center ml-auto">
+            {/* Right Side Actions */}
+            <div className="flex items-center ml-auto gap-2">
+              <ThemeToggle />
+
+              {/* Mobile Menu Toggle */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-2 text-foreground"
+                className="p-2 text-foreground lg:hidden"
                 aria-label="Toggle menu"
               >
                 {isMobileMenuOpen ? (
@@ -182,7 +188,7 @@ export default function Navbar() {
                       {link.label}
                     </a>
                     {link.hasDropdown && link.dropdownItems && (
-                      <div className="ml-4 mt-2 space-y-2">
+                      <div className="ml-4 mt-2 space-y-2 border-l-2 border-primary/20 pl-4 py-1">
                         {link.dropdownItems.map((item) => (
                           <a
                             key={item.label}

@@ -4,7 +4,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="py-24 bg-background relative overflow-hidden"
+      className="py-16 md:py-24 bg-background relative overflow-hidden"
     >
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
@@ -29,7 +29,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="glass-card p-8 md:p-12"
+            className="glass-card p-6 md:p-12"
           >
             <div className="space-y-6 text-center">
               <p className="text-lg md:text-xl leading-relaxed text-foreground">
