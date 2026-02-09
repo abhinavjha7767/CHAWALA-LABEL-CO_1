@@ -23,16 +23,7 @@ const blogPosts = [
     image:
       "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=500&auto=format&fit=crop&q=60",
   },
-  {
-    id: 2,
-    title: "Sustainable Packaging Solutions for 2024",
-    excerpt:
-      "Explore our latest eco-friendly packaging options, from recycled paper bags to biodegradable hang tags.",
-    date: "Feb 10, 2024",
-    author: "Sustainability Lead",
-    category: "Eco-Friendly",
-    image: "/sustainable.jpg",
-  },
+
   {
     id: 3,
     title: "Choosing the Right Label Material",
@@ -43,6 +34,16 @@ const blogPosts = [
     category: "Guide",
     image:
       "https://images.unsplash.com/photo-1557053503-0c252e5c8093?w=500&auto=format&fit=crop&q=60",
+  },
+  {
+    id: 4,
+    title: "The Art of Woven Labels",
+    excerpt:
+      "Dive into the intricate world of woven labels. Learn about the craftsmanship and detail that goes into creating premium brand identifiers.",
+    date: "Jan 28, 2024",
+    author: "Lead Weaver",
+    category: "Craftsmanship",
+    image: "/woven Labels.webp",
   },
 ];
 
@@ -64,8 +65,7 @@ export default function BlogSection() {
             Latest <span className="text-primary">Insights</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Updates, trends, and guides from the world of premium branding and
-            packaging.
+            Updates, trends, and guides from the world of premium branding.
           </p>
         </motion.div>
 

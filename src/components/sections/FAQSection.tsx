@@ -11,7 +11,7 @@ const faqs = [
   {
     question: "What is your minimum order quantity (MOQ)?",
     answer:
-      "Our MOQ typically starts at 100 pieces for most labels and tags. However, for specialized items or complex custom packaging, the MOQ might vary. Please contact us with your specific requirements for a precise quote.",
+      "Our MOQ typically starts at 100 pieces for most labels and tags. However, for specialized items, the MOQ might vary. Please contact us with your specific requirements for a precise quote.",
   },
   {
     question: "What is your standard turnaround time?",

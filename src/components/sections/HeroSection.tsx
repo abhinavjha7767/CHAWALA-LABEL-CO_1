@@ -40,16 +40,7 @@ const HeroSection = () => {
             Elevate Your Brand with <br className="hidden lg:block" />
             <span className="block min-h-[1.2em] font-serif text-primary">
               <TypeAnimation
-                sequence={[
-                  "Labels",
-                  2000,
-                  "Stickers",
-                  2000,
-                  "Tags",
-                  2000,
-                  "Custom Packaging",
-                  2000,
-                ]}
+                sequence={["Labels", 2000, "Stickers", 2000, "Tags", 2000]}
                 wrapper="span"
                 speed={50}
                 repeat={Infinity}

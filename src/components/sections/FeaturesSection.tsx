@@ -46,7 +46,7 @@ const features = [
     icon: Sparkles,
     title: "Free Design",
     description:
-      "Need a new design? Our professional designers have rich experience in tags, packagings, logo design, etc., and can provide free design and 3D draft.",
+      "Need a new design? Our professional designers have rich experience in tags, logo design, etc., and can provide free design and 3D draft.",
     color: "text-primary",
     bgColor: "bg-primary/10",
   },

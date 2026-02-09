@@ -59,54 +59,6 @@ const tagsAndLabels = [
   },
 ];
 
-const packagings = [
-  {
-    id: 1,
-    title: "Plastic Packaging Bags",
-    image: "/plastic-packaging-bags-814-300x201.jpg",
-  },
-  {
-    id: 2,
-    title: "Tissue Paper",
-    image: "/wrapping-tissue-paper-734-300x201.jpg",
-  },
-  {
-    id: 3,
-    title: "Drawstring Bags",
-    image: "/Satin-Bags-814-300x201.jpg",
-  },
-  {
-    id: 4,
-    title: "Paper Bags",
-    image: "/paper-bags-300x201.jpg",
-  },
-  {
-    id: 5,
-    title: "Packaging Boxes",
-    image: "/Packaging-Boxes-300x201.jpg",
-  },
-  {
-    id: 6,
-    title: "Packaging Tape",
-    image: "/Custom-Printed-Tape-10-300x201.jpg",
-  },
-  {
-    id: 6,
-    title: "Woven Labels",
-    image: "/woven Labels.webp",
-  },
-  {
-    id: 6,
-    title: "Printed Labels",
-    image: "/printed labels.webp",
-  },
-  {
-    id: 6,
-    title: "Garment Tags",
-    image: "/garment tags.webp",
-  },
-];
-
 export default function ProductsSection() {
   return (
     <>
@@ -159,54 +111,6 @@ export default function ProductsSection() {
       </section>
 
       {/* Packagings Section */}
-      <section
-        id="packagings"
-        className="py-16 md:py-20 bg-background border-t border-border/30"
-      >
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="font-display text-3xl md:text-4xl font-normal mb-4 text-primary">
-              Packagings
-            </h2>
-            <p className="text-foreground/70 text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
-              Custom the perfect garment packaging: paper bags, boutique boxes,
-              tissue paper, muslin bags, non-woven bags, hangers, carton boxes,
-              sealing tape, etc.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-8 max-w-5xl mx-auto">
-            {packagings.map((item, index) => (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="group cursor-pointer"
-              >
-                <div className="bg-muted/30 rounded-lg overflow-hidden mb-3 aspect-square flex items-center justify-center hover:bg-muted/50 transition-colors">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                <h3 className="text-xs md:text-sm text-center text-primary hover:underline font-normal">
-                  {item.title}
-                </h3>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
     </>
   );
 }

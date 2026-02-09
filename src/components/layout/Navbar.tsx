@@ -19,25 +19,7 @@ const tagsDropdownItems = [
   { label: "Zipper Pulls", href: "#tags" },
   { label: "Woven Patch", href: "#tags" },
   { label: "Embroidery Patch", href: "#tags" },
-  { label: "Wrapping Tissue Paper", href: "#tags" },
-  { label: "Drawstring Bags", href: "#tags" },
-  { label: "Plastic Bags", href: "#tags" },
-  { label: "Paper bags", href: "#tags" },
-  { label: "Packaging boxes", href: "#tags" },
-  { label: "Packaging Tape", href: "#tags" },
   { label: "Stickers", href: "#tags" },
-];
-
-const packagingsDropdownItems = [
-  { label: "Boxes", href: "#packagings" },
-  { label: "Paper Bags", href: "#packagings" },
-  { label: "Tissue Paper", href: "#packagings" },
-  { label: "Plastic Packaging Bags", href: "#packagings" },
-  { label: "Drawstring Bags", href: "#packagings" },
-  { label: "Packaging Tape", href: "#packagings" },
-  { label: "Thank You Cards", href: "#packagings" },
-  { label: "Round Stickers", href: "#packagings" },
-  { label: "Stickers", href: "#packagings" },
 ];
 
 const navLinks = [
@@ -46,12 +28,6 @@ const navLinks = [
     label: "Tags",
     hasDropdown: true,
     dropdownItems: tagsDropdownItems,
-  },
-  {
-    href: "#packagings",
-    label: "Packagings",
-    hasDropdown: true,
-    dropdownItems: packagingsDropdownItems,
   },
   { href: "#blog", label: "Blog" },
   { href: "#faqs", label: "FAQS" },
