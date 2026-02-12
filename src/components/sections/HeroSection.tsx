@@ -32,7 +32,7 @@ const HeroSection = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-serif font-semibold uppercase tracking-wider mx-auto md:mx-0">
             <Star className="w-3 h-3 fill-primary text-primary" />
-            <span>Premium Quality Printing Since 1985</span>
+            <span>Premium Quality Printing Since 1974</span>
           </div>
 
           {/* Heading */}
@@ -48,7 +48,7 @@ const HeroSection = () => {
             </span>
           </h1>
           {/* Subtext */}
-          <p className="text-lg text-muted-foreground max-w-xl mx-auto md:mx-0 leading-relaxed">
+          <p className="text-lg text-gray-9100 dark:text-gray-100 max-w-xl mx-auto md:mx-0 leading-relaxed">
             From high-quality clothing tags to bespoke labels. We craft the
             professional finish your products deserve. Fast turnaround, premium
             materials.
@@ -64,13 +64,13 @@ const HeroSection = () => {
             </a>
             <a
               href="#tags"
-              className="inline-flex h-12 items-center justify-center rounded-md border border-input bg-background px-8 font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground font-serif"
+              className="inline-flex h-12 items-center justify-center rounded-md border border-input  px-8 font-medium font-serif"
             >
               View Gallery
             </a>
           </div>
           {/* Trust Indicators */}
-          <div className="pt-4 flex items-center justify-center md:justify-start gap-6 text-sm text-muted-foreground font-medium">
+          <div className="pt-4 flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-6 text-sm text-gray-900 dark:text-gray-100 font-medium relative z-20">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-primary" />
               <span>Bulk Orders</span>

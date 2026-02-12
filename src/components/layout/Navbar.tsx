@@ -66,7 +66,7 @@ export default function Navbar() {
             <div className="flex items-center">
               <a href="/" className="flex items-center">
                 <img
-                  src="/logo.png"
+                  src="/chawlaaa logo.png"
                   alt="AS PRINTERS Logo"
                   className="h-10 w-auto object-contain"
                 />

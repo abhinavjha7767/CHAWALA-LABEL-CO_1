@@ -114,25 +114,51 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} AS PRINTERS. All rights reserved.
-          </p>
-          <div className="flex gap-6">
+        {/* Certifications - Centered */}
+        <div className="flex flex-col items-center mb-12">
+          <h4 className="font-display font-semibold mb-6 text-foreground text-lg">
+            Certifications
+          </h4>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <a
-              href="#"
-              className="text-muted-foreground hover:text-primary transition-colors text-sm"
+              href="/certificate1.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block w-64 bg-white border border-border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all"
             >
-              Privacy Policy
+              <div className="aspect-video relative bg-muted/20">
+                <img
+                  src="/certificate1.jpeg"
+                  alt="Certificate 1"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
+              </div>
             </a>
+
             <a
-              href="#"
-              className="text-muted-foreground hover:text-primary transition-colors text-sm"
+              href="/certificate%202_pdf.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block w-64 bg-white border border-border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all"
             >
-              Terms of Service
+              <div className="aspect-video relative bg-muted/20">
+                <img
+                  src="/certificate%202.jpeg"
+                  alt="Certificate 2"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
+              </div>
             </a>
           </div>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="pt-8 border-t border-border flex flex-col justify-between items-center gap-4 ">
+          <p className="text-muted-foreground text-sm text-center items-center justify-center">
+            © {new Date().getFullYear()} AS PRINTERS. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
