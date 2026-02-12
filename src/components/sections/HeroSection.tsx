@@ -7,8 +7,6 @@ import FloatingLabel3D from "../FloatingLabel3D";
 const HeroSection = () => {
   return (
     <div className="relative w-full bg-background overflow-hidden px-4 md:px-6">
-      {/* Background Pattern - subtle grid to add texture */}
-      {/* Background pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div
           className="absolute inset-0"
@@ -31,7 +29,7 @@ const HeroSection = () => {
         <div className="flex-1 text-center md:text-left space-y-8">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-serif font-semibold uppercase tracking-wider mx-auto md:mx-0">
-            <Star className="w-3 h-3 fill-primary text-primary" />
+           
             <span>Premium Quality Printing Since 1974</span>
           </div>
 

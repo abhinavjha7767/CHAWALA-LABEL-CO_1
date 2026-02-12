@@ -3,21 +3,17 @@ import { Tag, Mail, Phone } from "lucide-react";
 const footerLinks = {
   products: [
     { label: "Garment Tags", href: "#products" },
-    { label: "Product Labels", href: "#products" },
     { label: "Barcode Labels", href: "#products" },
     { label: "Custom Stickers", href: "#products" },
   ],
   company: [
     { label: "About Us", href: "#about" },
     { label: "Why Choose Us", href: "#features" },
-    { label: "Contact", href: "#contact" },
-    { label: "Careers", href: "#" },
+    {label: "Blog", href: "#blog"},
   ],
   support: [
-    { label: "FAQs", href: "#" },
-    { label: "Shipping Info", href: "#" },
-    { label: "Returns", href: "#" },
-    { label: "Order Tracking", href: "#" },
+    { label: "FAQs", href: "#faqs" },
+     { label: "Contact", href: "#contact" },
   ],
 };
 
@@ -114,7 +110,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Certifications - Centered */}
+        
         <div className="flex flex-col items-center mb-12">
           <h4 className="font-display font-semibold mb-6 text-foreground text-lg">
             Certifications
