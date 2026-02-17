@@ -9,11 +9,11 @@ const footerLinks = {
   company: [
     { label: "About Us", href: "#about" },
     { label: "Why Choose Us", href: "#features" },
-    {label: "Blog", href: "#blog"},
+    { label: "Blog", href: "#blog" },
   ],
   support: [
     { label: "FAQs", href: "#faqs" },
-     { label: "Contact", href: "#contact" },
+    { label: "Contact", href: "#contact" },
   ],
 };
 
@@ -110,23 +110,22 @@ export default function Footer() {
           </div>
         </div>
 
-        
         <div className="flex flex-col items-center mb-12">
           <h4 className="font-display font-semibold mb-6 text-foreground text-lg">
             Certifications
           </h4>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <a
               href="/certificate1.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="group block w-64 bg-white border border-border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all"
+              className="group block w-fit bg-white border border-border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all"
             >
-              <div className="aspect-video relative bg-muted/20">
+              <div className="relative p-4">
                 <img
-                  src="/certificate1.jpeg"
+                  src="/certificate1.png"
                   alt="Certificate 1"
-                  className="w-full h-full object-cover"
+                  className="h-32 w-auto object-contain"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
               </div>
@@ -136,13 +135,13 @@ export default function Footer() {
               href="/certificate%202_pdf.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="group block w-64 bg-white border border-border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all"
+              className="group block w-fit bg-white border border-border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all"
             >
-              <div className="aspect-video relative bg-muted/20">
+              <div className="relative p-4">
                 <img
-                  src="/certificate%202.jpeg"
+                  src="/certificate2.png"
                   alt="Certificate 2"
-                  className="w-full h-full object-cover"
+                  className="h-32 w-auto object-contain"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
               </div>

@@ -1,62 +1,15 @@
 import { motion } from "framer-motion";
 
 const tagsAndLabels = [
-  { id: 1, title: "Hang Tags", image: "/hang tags.jpg" },
-  { id: 2, title: "Hang Tag String", image: "/HangTag String.jpg" },
-  { id: 3, title: "Woven Labels", image: "/Woven labels.jpg" },
-  { id: 4, title: "Metal Tags", image: "/Metal Tags.jpg" },
-  { id: 5, title: "Leather Labels", image: "/Leather Labels.jpg" },
-  {
-    id: 6,
-    title: "Clothing Buttons",
-    image: "/Clothing Buttons.jpg",
-  },
-  {
-    id: 7,
-    title: "Printed Fabric Labels",
-    image: "/Printed fabric.jpg",
-  },
-  {
-    id: 8,
-    title: "Rubber Labels",
-    image: "/Rubber Labels.jpg",
-  },
-  {
-    id: 9,
-    title: "Zipper Pulls",
-    image: "/Zipper Pulls.jpg",
-  },
-  {
-    id: 10,
-    title: "Heat Transfer Labels",
-    image: "/Heat Transfer Labels.jpg",
-  },
-  {
-    id: 11,
-    title: "Woven Patches",
-    image: "/Woven Patches.jpg",
-  },
-  {
-    id: 12,
-    title: "Embroidered Patches",
-    image: "/Emboidered Patches.jpg",
-  },
-  {
-    id: 13,
-    title: "Chenille Patches",
-    image: "/Chenille Patches.jpg",
-  },
-  {
-    id: 14,
-    title: "Stickers",
-    image:
-      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&auto=format&fit=crop&q=80",
-  },
-  {
-    id: 15,
-    title: "Clear Clothing Labels",
-    image: "/Clear CLothing Labels.jpg",
-  },
+  { id: 1, title: "Gallery Image 1", image: "/Products_1.jpeg" },
+  { id: 2, title: "Gallery Image 2", image: "/Products_2.jpeg" },
+  { id: 3, title: "Gallery Image 3", image: "/Products_3.jpeg" },
+  { id: 4, title: "Gallery Image 4", image: "/Products_4.jpeg" },
+  { id: 5, title: "Gallery Image 5", image: "/Products_5.jpeg" },
+  { id: 6, title: "Gallery Image 6", image: "/Products_6.jpeg" },
+  { id: 7, title: "Gallery Image 7", image: "/Products_7.jpeg" },
+  { id: 8, title: "Gallery Image 8", image: "/Products_8.jpeg" },
+  { id: 9, title: "Gallery Image 9", image: "/Products_9.jpeg" },
 ];
 
 export default function ProductsSection() {
@@ -73,7 +26,7 @@ export default function ProductsSection() {
             className="text-center mb-12"
           >
             <h2 className="font-display text-3xl md:text-4xl font-normal mb-4 text-primary">
-              Tags and Labels
+              Our Gallery
             </h2>
             <p className="text-foreground/70 text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
               High quality tags and labels include hang tags, hang tag strings,
@@ -97,13 +50,10 @@ export default function ProductsSection() {
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
                 </div>
-                <h3 className="text-xs md:text-sm text-center text-primary hover:underline font-normal">
-                  {item.title}
-                </h3>
               </motion.div>
             ))}
           </div>

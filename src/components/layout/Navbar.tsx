@@ -25,13 +25,13 @@ const tagsDropdownItems = [
 const navLinks = [
   {
     href: "#tags",
-    label: "Tags",
+    label: "Gallery",
     hasDropdown: true,
     dropdownItems: tagsDropdownItems,
   },
+  { href: "#about", label: "About Us" },
   { href: "#blog", label: "Blog" },
   { href: "#faqs", label: "FAQS" },
-  { href: "#about", label: "About Us" },
   { href: "#contact", label: "Contact Us" },
 ];
 
