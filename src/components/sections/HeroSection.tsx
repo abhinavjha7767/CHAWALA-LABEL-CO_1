@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { ArrowRight, CheckCircle2, Package, Printer, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
-import FloatingLabel3D from "../FloatingLabel3D";
+
+const FloatingLabel3D = lazy(() => import("../FloatingLabel3D"));
 
 const HeroSection = () => {
   return (
@@ -17,7 +18,9 @@ const HeroSection = () => {
       </div>
 
       {/* 3D Labels */}
-      <FloatingLabel3D />
+      <Suspense fallback={null}>
+        <FloatingLabel3D />
+      </Suspense>
 
       {/* Gradient Blob for depth */}
       <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-3xl pointer-events-none" />
@@ -29,7 +32,6 @@ const HeroSection = () => {
         <div className="flex-1 text-center md:text-left space-y-8">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-serif font-semibold uppercase tracking-wider mx-auto md:mx-0">
-           
             <span>Premium Quality Printing Since 1974</span>
           </div>
 

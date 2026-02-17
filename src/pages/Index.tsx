@@ -1,12 +1,22 @@
+import { Suspense, lazy } from "react";
 import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
-import ProductsSection from "@/components/sections/ProductsSection";
-import FeaturesSection from "@/components/sections/FeaturesSection";
-import AboutSection from "@/components/sections/AboutSection";
-import ContactSection from "@/components/sections/ContactSection";
-import BlogSection from "@/components/sections/BlogSection";
-import FAQSection from "@/components/sections/FAQSection";
+import { SectionLoader } from "@/components/ui/SectionLoader";
+
+// Lazy load non-critical sections
+const ProductsSection = lazy(
+  () => import("@/components/sections/ProductsSection"),
+);
+const FeaturesSection = lazy(
+  () => import("@/components/sections/FeaturesSection"),
+);
+const AboutSection = lazy(() => import("@/components/sections/AboutSection"));
+const ContactSection = lazy(
+  () => import("@/components/sections/ContactSection"),
+);
+const BlogSection = lazy(() => import("@/components/sections/BlogSection"));
+const FAQSection = lazy(() => import("@/components/sections/FAQSection"));
+const Footer = lazy(() => import("@/components/layout/Footer"));
 
 const Index = () => {
   return (
@@ -14,14 +24,28 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <ProductsSection />
-        <FeaturesSection />
-        <AboutSection />
-        <BlogSection />
-        <FAQSection />
-        <ContactSection />
+        <Suspense fallback={<SectionLoader />}>
+          <ProductsSection />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
+          <FeaturesSection />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
+          <AboutSection />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
+          <BlogSection />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
+          <FAQSection />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
+          <ContactSection />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={<SectionLoader />}>
+        <Footer />
+      </Suspense>
     </div>
   );
 };
