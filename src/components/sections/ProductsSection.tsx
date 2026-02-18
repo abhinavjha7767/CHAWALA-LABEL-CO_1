@@ -12,6 +12,11 @@ const tagsAndLabels = [
   { id: 9, image: "/Products_9.jpeg" },
   { id: 10, image: "/Products_10.jpeg" },
   { id: 11, image: "/Products_11.jpeg" },
+  { id: 12, image: "/Products_12.jpeg" },
+  { id: 13, image: "/Products_13.jpeg" },
+  { id: 14, image: "/Products_14.jpeg" },
+  { id: 15, image: "/Products_15.jpeg" },
+  { id: 16, image: "/Products_16.jpeg" },
 ];
 
 export default function ProductsSection() {
@@ -38,7 +43,7 @@ export default function ProductsSection() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
             {tagsAndLabels.map((item, index) => (
               <motion.div
                 key={item.id}
@@ -48,10 +53,9 @@ export default function ProductsSection() {
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 className="group cursor-pointer"
               >
-                <div className="bg-muted/30 rounded-lg overflow-hidden mb-3 aspect-square flex items-center justify-center hover:bg-muted/50 transition-colors">
+                <div className="bg-muted/30 rounded-lg overflow-hidden mb-3 aspect-[3/4] flex items-center justify-center hover:bg-muted/50 transition-colors">
                   <img
                     src={item.image}
-                    alt={item.title}
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
