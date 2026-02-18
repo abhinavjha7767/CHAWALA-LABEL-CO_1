@@ -1,15 +1,17 @@
 import { motion } from "framer-motion";
 
 const tagsAndLabels = [
-  { id: 1, title: "Gallery Image 1", image: "/Products_1.jpeg" },
-  { id: 2, title: "Gallery Image 2", image: "/Products_2.jpeg" },
-  { id: 3, title: "Gallery Image 3", image: "/Products_3.jpeg" },
-  { id: 4, title: "Gallery Image 4", image: "/Products_4.jpeg" },
-  { id: 5, title: "Gallery Image 5", image: "/Products_5.jpeg" },
-  { id: 6, title: "Gallery Image 6", image: "/Products_6.jpeg" },
-  { id: 7, title: "Gallery Image 7", image: "/Products_7.jpeg" },
-  { id: 8, title: "Gallery Image 8", image: "/Products_8.jpeg" },
-  { id: 9, title: "Gallery Image 9", image: "/Products_9.jpeg" },
+  { id: 1, image: "/Products_1.jpeg" },
+  { id: 2, image: "/Products_2.jpeg" },
+  { id: 3, image: "/Products_3.jpeg" },
+  { id: 4, image: "/Products_4.jpeg" },
+  { id: 5, image: "/Products_5.jpeg" },
+  { id: 6, image: "/Products_6.jpeg" },
+  { id: 7, image: "/Products_7.jpeg" },
+  { id: 8, image: "/Products_8.jpeg" },
+  { id: 9, image: "/Products_9.jpeg" },
+  { id: 10, image: "/Products_10.jpeg" },
+  { id: 11, image: "/Products_11.jpeg" },
 ];
 
 export default function ProductsSection() {
