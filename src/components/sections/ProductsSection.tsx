@@ -1,22 +1,22 @@
 import { motion } from "framer-motion";
 
 const tagsAndLabels = [
-  { id: 1, image: "/Products_1.jpeg" },
-  { id: 2, image: "/Products_2.jpeg" },
-  { id: 3, image: "/Products_3.jpeg" },
-  { id: 4, image: "/Products_4.jpeg" },
-  { id: 5, image: "/Products_5.jpeg" },
-  { id: 6, image: "/Products_6.jpeg" },
-  { id: 7, image: "/Products_7.jpeg" },
-  { id: 8, image: "/Products_8.jpeg" },
-  { id: 9, image: "/Products_9.jpeg" },
-  { id: 10, image: "/Products_10.jpeg" },
-  { id: 11, image: "/Products_11.jpeg" },
-  { id: 12, image: "/Products_12.jpeg" },
-  { id: 13, image: "/Products_13.jpeg" },
-  { id: 14, image: "/Products_14.jpeg" },
-  { id: 15, image: "/Products_15.jpeg" },
-  { id: 16, image: "/Products_16.jpeg" },
+  { id: 1, image: "/Products_1.png" },
+  { id: 2, image: "/Products_2.png" },
+  { id: 3, image: "/Products_3.png" },
+  { id: 4, image: "/Products_4.png" },
+  { id: 5, image: "/Products_5.png" },
+  { id: 6, image: "/Products_6.png" },
+  { id: 7, image: "/Products_7.png" },
+  { id: 8, image: "/Products_8.png" },
+  { id: 9, image: "/Products_9.png" },
+  { id: 10, image: "/Products_10.png" },
+  { id: 11, image: "/Products_11.png" },
+  { id: 12, image: "/Products_12.png" },
+  { id: 13, image: "/Products_13.png" },
+  { id: 14, image: "/Products_14.png" },
+  { id: 15, image: "/Products_15.png" },
+  { id: 16, image: "/Products_16.png" },
 ];
 
 export default function ProductsSection() {
@@ -66,7 +66,7 @@ export default function ProductsSection() {
         </div>
       </section>
 
-      {/* Packagings Section */}
+      
     </>
   );
 }

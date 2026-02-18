@@ -83,9 +83,7 @@ export default function FeaturesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <p className="text-foreground/60 text-sm md:text-base max-w-3xl mx-auto">
-            More clothing accessories: plastic hooks, pins, ropes, eyelets, etc.
-          </p>
+        
         </motion.div>
 
         <motion.div

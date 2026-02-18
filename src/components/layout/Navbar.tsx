@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navLinks = [
   {
@@ -67,8 +66,6 @@ export default function Navbar() {
 
             {/* Right Side Actions */}
             <div className="flex items-center ml-auto gap-2 hover:cursor-pointer">
-              <ThemeToggle />
-
               {/* Mobile Menu Toggle */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

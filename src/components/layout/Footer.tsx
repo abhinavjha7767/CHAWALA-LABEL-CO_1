@@ -119,7 +119,7 @@ export default function Footer() {
               href="/certificate1.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="group block w-fit bg-white border border-border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all"
+              className="group block w-fit rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all"
             >
               <div className="relative p-4">
                 <img
@@ -135,7 +135,7 @@ export default function Footer() {
               href="/certificate%202_pdf.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="group block w-fit bg-white border border-border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all"
+              className="group block w-fit rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all"
             >
               <div className="relative p-4">
                 <img
