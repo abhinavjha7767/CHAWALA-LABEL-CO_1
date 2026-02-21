@@ -1,11 +1,13 @@
 import React, { Suspense, lazy } from "react";
-import { ArrowRight, CheckCircle2, Package, Printer, Star } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { TypeAnimation } from "react-type-animation";
+import { useLanguage } from "@/context/LanguageContext";
 
 const FloatingLabel3D = lazy(() => import("../FloatingLabel3D"));
 
 const HeroSection = () => {
+  const { t, language } = useLanguage();
+
   return (
     <div className="relative w-full bg-background overflow-hidden px-4 md:px-6">
       <div className="absolute inset-0 opacity-[0.02]">
@@ -25,22 +27,21 @@ const HeroSection = () => {
       {/* Gradient Blob for depth */}
       <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Navigation Placeholder (blends with hero) */}
-
       <main className="relative z-10 container mx-auto px-6 pt-28 pb-24 md:pt-20 md:pb-32 flex flex-col md:flex-row items-center gap-12 lg:gap-20">
         {/* Left Content */}
         <div className="flex-1 text-center md:text-left space-y-8">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-serif font-semibold uppercase tracking-wider mx-auto md:mx-0">
-            <span>Premium Quality Printing Since 1974</span>
+            <span>{t.hero.badge}</span>
           </div>
 
           {/* Heading */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground leading-[1.15] tracking-tight font-serif">
-            Elevate Your Brand with <br className="hidden lg:block" />
+            {t.hero.heading} <br className="hidden lg:block" />
             <span className="block min-h-[1.2em] font-serif text-primary">
               <TypeAnimation
-                sequence={["Labels", 2000, "Stickers", 2000, "Tags", 2000]}
+                key={language}
+                sequence={t.hero.typeLabels.flatMap((label) => [label, 2000])}
                 wrapper="span"
                 speed={50}
                 repeat={Infinity}
@@ -49,9 +50,7 @@ const HeroSection = () => {
           </h1>
           {/* Subtext */}
           <p className="text-lg text-gray-9100 dark:text-gray-100 max-w-xl mx-auto md:mx-0 leading-relaxed">
-            From high-quality clothing tags to bespoke labels. We craft the
-            professional finish your products deserve. Fast turnaround, premium
-            materials.
+            {t.hero.subtext}
           </p>
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
@@ -59,29 +58,29 @@ const HeroSection = () => {
               href="#contact"
               className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md bg-primary px-8 font-medium text-white transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25 font-serif"
             >
-              <span className="mr-2">Get a Quote</span>
+              <span className="mr-2">{t.hero.getQuote}</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
               href="#tags"
-              className="inline-flex h-12 items-center justify-center rounded-md border border-input  px-8 font-medium font-serif"
+              className="inline-flex h-12 items-center justify-center rounded-md border border-input px-8 font-medium font-serif"
             >
-              View Gallery
+              {t.hero.viewGallery}
             </a>
           </div>
           {/* Trust Indicators */}
           <div className="pt-4 flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-6 text-sm text-gray-900 dark:text-gray-100 font-medium relative z-20">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-primary" />
-              <span>Bulk Orders</span>
+              <span>{t.hero.bulkOrders}</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-primary" />
-              <span>Custom Designs</span>
+              <span>{t.hero.customDesigns}</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-primary" />
-              <span>Fast Shipping</span>
+              <span>{t.hero.fastShipping}</span>
             </div>
           </div>
         </div>

@@ -1,23 +1,16 @@
+import { memo } from "react";
 import { Tag, Mail, Phone } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
-const footerLinks = {
-  products: [
-    { label: "Garment Tags", href: "#products" },
-    { label: "Barcode Labels", href: "#products" },
-    { label: "Custom Stickers", href: "#products" },
-  ],
-  company: [
-    { label: "About Us", href: "#about" },
-    { label: "Why Choose Us", href: "#features" },
-    { label: "Blog", href: "#blog" },
-  ],
-  support: [
-    { label: "FAQs", href: "#faqs" },
-    { label: "Contact", href: "#contact" },
-  ],
-};
+const footerHrefs = {
+  products: ["#tags", "#tags", "#tags"],
+  company: ["#about", "#features", "#blog"],
+  support: ["#faqs", "#contact"],
+} as const;
 
-export default function Footer() {
+const Footer = memo(() => {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-muted/30 border-t border-border py-12 md:py-16">
       <div className="container mx-auto px-4">
@@ -29,12 +22,11 @@ export default function Footer() {
                 <Tag className="w-5 h-5 text-primary" />
               </div>
               <span className="font-display text-2xl font-bold text-foreground">
-                AS PRINTERS
+                {t.footer.companyName}
               </span>
             </div>
             <p className="text-muted-foreground mb-6 max-w-sm mx-auto md:mx-0">
-              Premium branding solutions for the fashion industry. Elevate your
-              brand with custom labels, tags, and stickers.
+              {t.footer.tagline}
             </p>
             <div className="space-y-2">
               <a
@@ -45,25 +37,25 @@ export default function Footer() {
                 +91 9873705056
               </a>
               <a
-                href="mailto:chawla@chawlalabel.com"
+                href="mailto:arvinder22@gmail.com"
                 className="flex items-center justify-center md:justify-start gap-2 text-muted-foreground hover:text-primary transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                chawla@chawlalabel.com
+                arvinder22@gmail.com
               </a>
             </div>
           </div>
 
-          {/* Links */}
+          {/* Products */}
           <div className="text-center md:text-left">
             <h4 className="font-display font-semibold mb-4 text-foreground">
-              Products
+              {t.footer.products}
             </h4>
             <ul className="space-y-2">
-              {footerLinks.products.map((link) => (
-                <li key={link.label}>
+              {t.footer.links.products.map((link, idx) => (
+                <li key={idx}>
                   <a
-                    href={link.href}
+                    href={footerHrefs.products[idx]}
                     className="text-muted-foreground hover:text-primary transition-colors text-sm"
                   >
                     {link.label}
@@ -73,15 +65,16 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Company */}
           <div className="text-center md:text-left">
             <h4 className="font-display font-semibold mb-4 text-foreground">
-              Company
+              {t.footer.company}
             </h4>
             <ul className="space-y-2">
-              {footerLinks.company.map((link) => (
-                <li key={link.label}>
+              {t.footer.links.company.map((link, idx) => (
+                <li key={idx}>
                   <a
-                    href={link.href}
+                    href={footerHrefs.company[idx]}
                     className="text-muted-foreground hover:text-primary transition-colors text-sm"
                   >
                     {link.label}
@@ -91,15 +84,16 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Support */}
           <div className="text-center md:text-left">
             <h4 className="font-display font-semibold mb-4 text-foreground">
-              Support
+              {t.footer.support}
             </h4>
             <ul className="space-y-2">
-              {footerLinks.support.map((link) => (
-                <li key={link.label}>
+              {t.footer.links.support.map((link, idx) => (
+                <li key={idx}>
                   <a
-                    href={link.href}
+                    href={footerHrefs.support[idx]}
                     className="text-muted-foreground hover:text-primary transition-colors text-sm"
                   >
                     {link.label}
@@ -110,9 +104,10 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Certifications */}
         <div className="flex flex-col items-center mb-12">
           <h4 className="font-display font-semibold mb-6 text-foreground text-lg">
-            Certifications
+            {t.footer.certifiedBy}
           </h4>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <a
@@ -126,6 +121,8 @@ export default function Footer() {
                   src="/certificate1.png"
                   alt="Certificate 1"
                   className="h-32 w-auto object-contain"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
               </div>
@@ -142,6 +139,8 @@ export default function Footer() {
                   src="/certificate2.png"
                   alt="Certificate 2"
                   className="h-32 w-auto object-contain"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
               </div>
@@ -150,12 +149,26 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-border flex flex-col justify-between items-center gap-4 ">
-          <p className="text-muted-foreground text-sm text-center items-center justify-center">
-            © {new Date().getFullYear()} AS PRINTERS. All rights reserved.
+        <div className="pt-8 border-t border-border flex flex-col justify-between items-center gap-4">
+          <p className="text-muted-foreground text-sm text-center">
+            © {new Date().getFullYear()} {t.footer.copyright}
+            <span className="text-lime-600">
+              <a
+                href="https://www.wegrowconsultancyandsolution.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {" "}
+                {t.footer.by}
+              </a>
+            </span>
           </p>
         </div>
       </div>
     </footer>
   );
-}
+});
+
+Footer.displayName = "Footer";
+
+export default Footer;
