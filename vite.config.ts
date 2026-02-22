@@ -19,18 +19,22 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+    dedupe: ["react", "react-dom"],
   },
   build: {
-    // Target modern browsers for smaller output
     target: "es2020",
-    // Increase chunk size warning limit
     chunkSizeWarningLimit: 600,
     rollupOptions: {
       output: {
-        // Manual chunk splitting to separate vendor libs from app code
         manualChunks(id) {
-          // Core React runtime — loaded first, cached forever
-          if (id.includes("node_modules/react/") || id.includes("node_modules/react-dom/")) {
+          // Core React runtime — must all live together so scheduler,
+          // react, and react-dom initialize as one atomic chunk
+          if (
+            id.includes("node_modules/react/") ||
+            id.includes("node_modules/react-dom/") ||
+            id.includes("node_modules/react-router") ||
+            id.includes("node_modules/scheduler/")
+          ) {
             return "react-core";
           }
           // Framer Motion is large — isolate so it doesn't block initial paint
@@ -52,7 +56,6 @@ export default defineConfig(({ mode }) => ({
         },
       },
     },
-    // Minify with esbuild (fastest)
     minify: "esbuild",
   },
 }));
