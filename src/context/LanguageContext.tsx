@@ -1,4 +1,11 @@
-import * as React from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  useMemo,
+  useCallback,
+  ReactNode,
+} from "react";
 
 type Language = "en" | "ja";
 
@@ -502,18 +509,18 @@ interface LanguageContextType {
   t: Translations;
 }
 
-const LanguageContext = React.createContext<LanguageContextType>({
+const LanguageContext = createContext<LanguageContextType>({
   language: "en",
   setLanguage: () => {},
   t: en,
 });
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLang] = React.useState<Language>("en");
+export function LanguageProvider({ children }: { children: ReactNode }) {
+  const [language, setLang] = useState<Language>("en");
 
-  const setLanguage = React.useCallback((lang: Language) => setLang(lang), []);
-  const t = React.useMemo(() => translations[language], [language]);
-  const value = React.useMemo(
+  const setLanguage = useCallback((lang: Language) => setLang(lang), []);
+  const t = useMemo(() => translations[language], [language]);
+  const value = useMemo(
     () => ({ language, setLanguage, t }),
     [language, setLanguage, t],
   );
@@ -526,5 +533,5 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 }
 
 export function useLanguage() {
-  return React.useContext(LanguageContext);
+  return useContext(LanguageContext);
 }
