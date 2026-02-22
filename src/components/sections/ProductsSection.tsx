@@ -2,29 +2,90 @@ import { useState, useEffect, useCallback, memo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod2 from "@/assets/Products-2.png?w=400&as=src";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod2Srcset from "@/assets/Products-2.png?w=300;600;900&as=srcset";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod3 from "@/assets/Products-3.png?w=400&as=src";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod3Srcset from "@/assets/Products-3.png?w=300;600;900&as=srcset";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod4 from "@/assets/Products-4.png?w=400&as=src";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod4Srcset from "@/assets/Products-4.png?w=300;600;900&as=srcset";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod5 from "@/assets/Products-5.png?w=400&as=src";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod5Srcset from "@/assets/Products-5.png?w=300;600;900&as=srcset";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod6 from "@/assets/Products-6.png?w=400&as=src";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod6Srcset from "@/assets/Products-6.png?w=300;600;900&as=srcset";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod7 from "@/assets/Products-7.png?w=400&as=src";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod7Srcset from "@/assets/Products-7.png?w=300;600;900&as=srcset";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod8 from "@/assets/Products-8.png?w=400&as=src";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod8Srcset from "@/assets/Products-8.png?w=300;600;900&as=srcset";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod9 from "@/assets/Products-9.png?w=400&as=src";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod9Srcset from "@/assets/Products-9.png?w=300;600;900&as=srcset";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod10 from "@/assets/Products-10.png?w=400&as=src";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod10Srcset from "@/assets/Products-10.png?w=300;600;900&as=srcset";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod11 from "@/assets/Products-11.png?w=400&as=src";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod11Srcset from "@/assets/Products-11.png?w=300;600;900&as=srcset";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod12 from "@/assets/Products-12.png?w=400&as=src";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod12Srcset from "@/assets/Products-12.png?w=300;600;900&as=srcset";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod13 from "@/assets/Products-13.png?w=400&as=src";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod13Srcset from "@/assets/Products-13.png?w=300;600;900&as=srcset";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod14 from "@/assets/Products-14.png?w=400&as=src";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod14Srcset from "@/assets/Products-14.png?w=300;600;900&as=srcset";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod15 from "@/assets/Products-15.png?w=400&as=src";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod15Srcset from "@/assets/Products-15.png?w=300;600;900&as=srcset";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod16 from "@/assets/Products-16.png?w=400&as=src";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import prod16Srcset from "@/assets/Products-16.png?w=300;600;900&as=srcset";
+import OptimizedImage from "@/components/ui/optimized-image";
 
 // Static data outside component — never recreated on re-render
 const tagsAndLabels = [
-  { id: 2, image: "/Products_2.png" },
-  { id: 3, image: "/Products_3.png" },
-  { id: 4, image: "/Products_4.png" },
-  { id: 5, image: "/Products_5.png" },
-  { id: 6, image: "/Products_6.png" },
-  { id: 7, image: "/Products_7.png" },
-  { id: 8, image: "/Products_8.png" },
-  { id: 9, image: "/Products_9.png" },
-  { id: 10, image: "/Products_10.png" },
-  { id: 11, image: "/Products_11.png" },
-  { id: 12, image: "/Products_12.png" },
-  { id: 13, image: "/Products_13.png" },
-  { id: 14, image: "/Products_14.png" },
-  { id: 15, image: "/Products_15.png" },
-  { id: 16, image: "/Products_16.png" },
+  { id: 2, src: prod2, srcSet: prod2Srcset },
+  { id: 3, src: prod3, srcSet: prod3Srcset },
+  { id: 4, src: prod4, srcSet: prod4Srcset },
+  { id: 5, src: prod5, srcSet: prod5Srcset },
+  { id: 6, src: prod6, srcSet: prod6Srcset },
+  { id: 7, src: prod7, srcSet: prod7Srcset },
+  { id: 8, src: prod8, srcSet: prod8Srcset },
+  { id: 9, src: prod9, srcSet: prod9Srcset },
+  { id: 10, src: prod10, srcSet: prod10Srcset },
+  { id: 11, src: prod11, srcSet: prod11Srcset },
+  { id: 12, src: prod12, srcSet: prod12Srcset },
+  { id: 13, src: prod13, srcSet: prod13Srcset },
+  { id: 14, src: prod14, srcSet: prod14Srcset },
+  { id: 15, src: prod15, srcSet: prod15Srcset },
+  { id: 16, src: prod16, srcSet: prod16Srcset },
 ] as const;
 
 const TOTAL = tagsAndLabels.length;
 
-// Stable Framer Motion variants outside component
+
 const lightboxVariants = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
@@ -99,13 +160,13 @@ const ProductsSection = memo(() => {
                 className="group cursor-pointer"
                 onClick={() => openLightbox(index)}
               >
-                <div className="bg-muted/30 rounded-lg overflow-hidden mb-3 aspect-[3/4] flex items-center justify-center hover:bg-muted/50 transition-colors relative">
-                  <img
-                    src={item.image}
+                  <div className="bg-muted/30 rounded-lg overflow-hidden mb-3 aspect-[3/4] flex items-center justify-center hover:bg-muted/50 transition-colors relative">
+                  <OptimizedImage
+                    src={item.src}
+                    srcSet={item.srcSet}
+                    sizes="(min-width:1024px) 25vw, (min-width:768px) 33vw, 50vw"
                     alt={`Product ${item.id}`}
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
                     <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-sm font-medium bg-black/50 px-3 py-1 rounded-full">
@@ -155,9 +216,12 @@ const ProductsSection = memo(() => {
               animate={imageVariants.animate}
               exit={imageVariants.exit}
               transition={imageVariants.transition}
-              src={tagsAndLabels[selectedIndex].image}
+              src={tagsAndLabels[selectedIndex].src}
+              srcSet={tagsAndLabels[selectedIndex].srcSet}
               alt={`Product preview ${tagsAndLabels[selectedIndex].id}`}
               className="max-h-[90vh] max-w-[90vw] object-contain rounded-lg shadow-2xl"
+              loading="eager"
+              decoding="async"
               onClick={(e) => e.stopPropagation()}
             />
 

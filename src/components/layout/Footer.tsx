@@ -1,6 +1,17 @@
 import { memo } from "react";
 import { Tag, Mail, Phone } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import cert1Pdf from "@/assets/certificate1.pdf";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import cert1Img from "@/assets/certificate1.png?w=320&as=src";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import cert1Srcset from "@/assets/certificate1.png?w=160;320;640&as=srcset";
+import cert2Pdf from "@/assets/certificate-2-pdf.pdf";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import cert2Img from "@/assets/certificate2.png?w=320&as=src";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import cert2Srcset from "@/assets/certificate2.png?w=160;320;640&as=srcset";
+import OptimizedImage from "@/components/ui/optimized-image";
 
 const footerHrefs = {
   products: ["#tags", "#tags", "#tags"],
@@ -111,36 +122,36 @@ const Footer = memo(() => {
           </h4>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <a
-              href="/certificate1.pdf"
+              href={cert1Pdf}
               target="_blank"
               rel="noopener noreferrer"
               className="group block w-fit rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all"
             >
               <div className="relative p-4">
-                <img
-                  src="/certificate1.png"
+                <OptimizedImage
+                  src={cert1Img}
+                  srcSet={cert1Srcset}
+                  sizes="160px"
                   alt="Certificate 1"
                   className="h-32 w-auto object-contain"
-                  loading="lazy"
-                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
               </div>
             </a>
 
             <a
-              href="/certificate%202_pdf.pdf"
+              href={cert2Pdf}
               target="_blank"
               rel="noopener noreferrer"
               className="group block w-fit rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all"
             >
               <div className="relative p-4">
-                <img
-                  src="/certificate2.png"
+                <OptimizedImage
+                  src={cert2Img}
+                  srcSet={cert2Srcset}
+                  sizes="160px"
                   alt="Certificate 2"
                   className="h-32 w-auto object-contain"
-                  loading="lazy"
-                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
               </div>

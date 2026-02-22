@@ -3,6 +3,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
+import OptimizedImage from "@/components/ui/optimized-image";
+
+// @ts-expect-error: vite-imagetools import - handled at build time
+import logoSrc from "@/assets/chawlaaa-logo.png?w=384&as=src";
+// @ts-expect-error: vite-imagetools import - handled at build time
+import logoSrcset from "@/assets/chawlaaa-logo.png?w=96;192;384&as=srcset";
+
 // Stable nav variant objects outside component — never recreated
 const navVariants = {
   initial: { y: -100 },
@@ -63,13 +70,15 @@ const Navbar = memo(() => {
             {/* Brand Logo */}
             <div className="flex flex-col items-center">
               <a href="/" className="flex items-center">
-                <img
-                  src="/chawlaaa logo.png"
+                <OptimizedImage
+                  src={logoSrc}
+                  srcSet={logoSrcset}
+                  sizes="96px"
                   alt="AS PRINTERS Logo"
                   className="h-24 w-auto object-contain"
                   width={96}
                   height={96}
-                  fetchPriority="high"
+                  priority
                 />
               </a>
             </div>

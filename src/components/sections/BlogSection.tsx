@@ -12,12 +12,25 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { useLanguage } from "@/context/LanguageContext";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import printedSrc from "@/assets/printed-labels.webp?w=800&as=src";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import printedSrcset from "@/assets/printed-labels.webp?w=400;800;1200&as=srcset";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import garmentSrc from "@/assets/garment-tags.webp?w=800&as=src";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import garmentSrcset from "@/assets/garment-tags.webp?w=400;800;1200&as=srcset";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import wovenSrc from "@/assets/woven-Labels.webp?w=800&as=src";
+// @ts-expect-error: vite-imagetools imports - handled at build time
+import wovenSrcset from "@/assets/woven-Labels.webp?w=400;800;1200&as=srcset";
+import OptimizedImage from "@/components/ui/optimized-image";
 
 // Static data outside component
 const BLOG_IMAGES = [
-  "/printed labels.webp",
-  "/garment tags.webp",
-  "/woven Labels.webp",
+  { src: printedSrc, srcSet: printedSrcset },
+  { src: garmentSrc, srcSet: garmentSrcset },
+  { src: wovenSrc, srcSet: wovenSrcset },
 ] as const;
 
 // Stable viewport options
@@ -59,12 +72,12 @@ const BlogSection = memo(() => {
             >
               <Card className="h-full flex flex-col overflow-hidden hover:shadow-lg transition-shadow border-primary/10">
                 <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={BLOG_IMAGES[index]}
+                  <OptimizedImage
+                    src={BLOG_IMAGES[index].src}
+                    srcSet={BLOG_IMAGES[index].srcSet}
+                    sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw"
                     alt={post.title}
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                    loading="lazy"
-                    decoding="async"
                   />
                   <Badge className="absolute top-4 right-4 bg-background/90 text-foreground backdrop-blur-sm shadow-sm hover:bg-background/100">
                     {post.category}

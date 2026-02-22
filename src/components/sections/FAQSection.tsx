@@ -36,8 +36,8 @@ const FAQSection = memo(() => {
             whileInView={slideLeft.animate}
             className="lg:sticky lg:top-24"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium uppercase tracking-wider mb-6">
-              <HelpCircle className="w-4 h-4" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xl font-medium uppercase tracking-wider mb-6">
+              <HelpCircle className="w-5 h-6" />
               <span>{t.faq.support}</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 text-foreground">
